@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
 const AlbumItem = ({ id, name, image, desc }) => {
@@ -14,6 +15,12 @@ const AlbumItem = ({ id, name, image, desc }) => {
       <p className="text-slate-200 text-sm">{desc}</p>
     </div>
   );
+};
+AlbumItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
 };
 
 export default AlbumItem;

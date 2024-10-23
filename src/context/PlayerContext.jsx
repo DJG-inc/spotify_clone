@@ -100,7 +100,7 @@ const PlayerContextProvider = (props) => {
       audioRef.current.removeEventListener('ended', handleEnded); // Limpia el evento
       audioRef.current.removeEventListener('loadeddata', handleLoadedData); // Limpia el evento
     };
-  }, [audioRef, track, playStatus]); // Agrega track y playStatus a las dependencias
+  }, [track]); // Solo escucha cambios en 'track' para manejar cambios en la canción
 
   const contextValue = {
     audioRef,

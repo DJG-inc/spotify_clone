@@ -5,6 +5,8 @@ import Player from './components/Player';
 import Display from './components/Display';
 import Search from './components/Search';
 import { PlayerContext } from './context/PlayerContext';
+import Playlists from './components/Playlists'; // Importar el componente
+import Playlist from './components/Playlist'; // Importar el componente
 
 const App = () => {
   const { audioRef, track } = useContext(PlayerContext);
@@ -18,10 +20,13 @@ const App = () => {
     <div className='h-screen bg-black'>
       <div className='h-[90%] flex'>
         <Sidebar />
-          <Routes>
-            <Route path="/" element={<Display />} />
-            <Route path="/search" element={<Search />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Display />} />
+          <Route path="/album/:id" element={<Display isAlbum />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/playlists" element={<Playlists />} /> {/* Añadir la ruta aquí */}
+          <Route path="/playlist/:id" element={<Playlist />} /> {/* Ruta para una playlist específica */}
+        </Routes>
       </div>
       <Player />
       <audio ref={audioRef} src={track.file} preload='auto'></audio>

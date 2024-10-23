@@ -9,6 +9,7 @@ import pause_icon from './pause.png'
 import plays_icon from './plays.png'
 import prev_icon from './prev.png'
 import search_icon from './search.png'
+import playlist_icon from './playlist.png'
 import shuffle_icon from './shuffle.png'
 import speaker_icon from './speaker.png'
 import stack_icon from './stack.png'
@@ -53,6 +54,7 @@ export const assets = {
     plays_icon,
     prev_icon,
     search_icon,
+    playlist_icon,
     shuffle_icon,
     speaker_icon,
     stack_icon,
@@ -121,7 +123,8 @@ export const songsData = [
         image: img1,
         file:song1,
         desc:"Put a smile on your face with these happy tunes",
-        duration:"3:00"
+        duration:"3:00",
+        itsFavorite: false
     },
     {
         id:1,
@@ -129,7 +132,8 @@ export const songsData = [
         image: img2,
         file:song2,
         desc:"Put a smile on your face with these happy tunes",
-        duration:"2:20"
+        duration:"2:20",
+        itsFavorite: false
     },
     {
         id:2,
@@ -137,7 +141,8 @@ export const songsData = [
         image: img3,
         file:song3,
         desc:"Put a smile on your face with these happy tunes",
-        duration:"2:32"
+        duration:"2:32",
+        itsFavorite: false
     },
     {
         id:3,
@@ -153,7 +158,8 @@ export const songsData = [
         image: img5,
         file:song2,
         desc:"Put a smile on your face with these happy tunes",
-        duration:"3:10"
+        duration:"3:10",
+        itsFavorite: false
     },
     {
         id:5,
@@ -161,7 +167,8 @@ export const songsData = [
         image: img14    ,
         file:song3,
         desc:"Put a smile on your face with these happy tunes",
-        duration:"2:45"
+        duration:"2:45",
+        itsFavorite: false
     },
     {
         id:6,
@@ -169,7 +176,8 @@ export const songsData = [
         image: img7,
         file:song1,
         desc:"Put a smile on your face with these happy tunes",
-        duration:"2:18"
+        duration:"2:18",
+        itsFavorite: false
     },
     {
         id:7,
@@ -177,6 +185,7 @@ export const songsData = [
         image: img12,
         file:song2,
         desc:"Put a smile on your face with these happy tunes",
-        duration:"2:35"
+        duration:"2:35",
+        itsFavorite: false
     }
 ]
