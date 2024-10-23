@@ -4,12 +4,11 @@ import Navbar from "./Navbar";
 import { albumsData, songsData } from "../assets/assets";
 import AlbumItem from "./AlbumItem";
 import SongItem from "./SongItem";
-import SongInfo from "./SongInfo"; // Importar SongInfo
 
 const DisplayHome = () => {
   return (
     <div className="flex h-full">
-      <div className="w-3/4 overflow-y-auto">
+      <div className="overflow-y-auto">
         <Navbar />
         <div className="mb-4">
           <h1 className="my-5 font-bold text-2xl">Feature Charts</h1>
@@ -39,9 +38,6 @@ const DisplayHome = () => {
             ))}
           </div>
         </div>
-      </div>
-      <div className="w-1/4 bg-[#121212] p-4">
-        <SongInfo /> {/* Mostrar la información de la canción seleccionada */}
       </div>
     </div>
   );
