@@ -10,6 +10,26 @@ const PlayerContextProvider = (props) => {
 
   const [track, setTrack] = useState(songsData[0]);
   const [playStatus, setPlayStatus] = useState(false);
+
+  const [isInfoSidebarVisible, setIsInfoSidebarVisible] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [videoUrl, setVideoUrl] = useState(""); // This will store the YouTube embed URL
+
+  const toggleInfoSidebar = () => {
+    setIsInfoSidebarVisible(!isInfoSidebarVisible);
+  };
+
+  const showVideo = (url) => {
+    audioRef.current.pause();  // Pause the audio when switching to video mode
+    setVideoUrl(url);  
+    setIsVideoPlaying(true); 
+  };
+  
+
+  const hideVideo = () => {
+    setIsVideoPlaying(false); // Deactivate video mode
+  };
+
   const [time, setTime] = useState({
     currentTime: {
       seconds: 0,
@@ -61,11 +81,14 @@ const PlayerContextProvider = (props) => {
   };
 
   const seekSong = (e) => {
-    audioRef.current.currentTime = (e.nativeEvent.offsetX / seekBg.current.offsetWidth) * audioRef.current.duration;
+    audioRef.current.currentTime =
+      (e.nativeEvent.offsetX / seekBg.current.offsetWidth) *
+      audioRef.current.duration;
   };
 
   useEffect(() => {
     const handleTimeUpdate = () => {
+      if (!audioRef.current) return;
       seekBar.current.style.width = `${
         (audioRef.current.currentTime / audioRef.current.duration) * 100
       }%`;
@@ -82,25 +105,32 @@ const PlayerContextProvider = (props) => {
     };
 
     const handleEnded = () => {
-      next(); // Reproduce la siguiente canción cuando la actual termine
+      next(); // Play the next song when the current one ends
     };
 
     const handleLoadedData = () => {
-      if (playStatus) {
-        audioRef.current.play(); // Asegúrate de reproducir si está en estado de reproducción
+      if (playStatus && audioRef.current) {
+        audioRef.current.play(); // Ensure playback resumes if still in play status
       }
     };
 
-    audioRef.current.addEventListener('timeupdate', handleTimeUpdate);
-    audioRef.current.addEventListener('ended', handleEnded); // Agrega el evento ended
-    audioRef.current.addEventListener('loadeddata', handleLoadedData); // Agrega el evento loadeddata
+    // Only add event listeners if audioRef.current is defined
+    if (audioRef.current) {
+      audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
+      audioRef.current.addEventListener("ended", handleEnded);
+      audioRef.current.addEventListener("loadeddata", handleLoadedData);
+    }
 
+    // Cleanup function
     return () => {
-      audioRef.current.removeEventListener('timeupdate', handleTimeUpdate);
-      audioRef.current.removeEventListener('ended', handleEnded); // Limpia el evento
-      audioRef.current.removeEventListener('loadeddata', handleLoadedData); // Limpia el evento
+      if (audioRef.current) {
+        audioRef.current.removeEventListener("timeupdate", handleTimeUpdate);
+        audioRef.current.removeEventListener("ended", handleEnded);
+        audioRef.current.removeEventListener("loadeddata", handleLoadedData);
+      }
     };
-  }, [track]); // Solo escucha cambios en 'track' para manejar cambios en la canción
+
+  }, [audioRef, track, playStatus]); // Dependencies to re-run this effect
 
   const contextValue = {
     audioRef,
@@ -118,12 +148,19 @@ const PlayerContextProvider = (props) => {
     previous,
     next,
     seekSong,
+    isInfoSidebarVisible,
+    toggleInfoSidebar,
+    isVideoPlaying,
+    videoUrl,
+    showVideo,
+    hideVideo,
   };
 
   return (
     <PlayerContext.Provider value={contextValue}>
       {props.children}
-      <audio ref={audioRef} src={track.file} preload='auto' /> {/* Asegúrate de tener este audio aquí */}
+      <audio ref={audioRef} src={track.file} preload="auto" />{" "}
+      {/* Asegúrate de tener este audio aquí */}
     </PlayerContext.Provider>
   );
 };
