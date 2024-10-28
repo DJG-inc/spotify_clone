@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { songsData } from "../assets/assets";
 import { useSearch } from "../context/SearchContext";
 import { useNavigate } from "react-router-dom";
 import { useFavorites } from "../context/FavoriteContext"; // Importa el contexto de favoritos
+import { PlayerContext } from "../context/PlayerContext";
 
 const Navbar = () => {
   const { showSearch } = useSearch();
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const { addFavorite, isFavorite } = useFavorites(); // Obtén las funciones necesarias
+  const { playWithId } = useContext(PlayerContext);
 
   // Filtra canciones por título o artista
   const filteredSongs = songsData.filter(
