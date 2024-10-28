@@ -1,43 +1,27 @@
 import React, { useContext } from "react";
-import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import InfoSidebar from "./components/InfoSidebar";
 import Player from "./components/Player";
 import Display from "./components/Display";
-import Search from "./components/Search";
 import { PlayerContext } from "./context/PlayerContext";
-import Playlists from "./components/Playlists"; // Importar el componente
-import Playlist from "./components/Playlist"; // Importar el componente
+import { SearchProvider } from "./context/SearchContext";
+import { FavoritesProvider } from "./context/FavoriteContext";
+import InfoSidebar from "./components/InfoSidebar";
 import VideoPlayer from "./components/VideoPlayer";
 
 const App = () => {
   const { audioRef, track } = useContext(PlayerContext);
 
-  if (!audioRef || !track) {
-    console.error(
-      "El contexto del reproductor no proporciona audioRef o track."
-    );
-    return (
-      <div className="text-white">
-        Hubo un error cargando la aplicación. Verifica la consola para más
-        detalles.
-      </div>
-    );
-  }
-
   return (
     <div className="h-screen bg-black">
       <div className="h-[90%] flex">
-        <Sidebar />
-        <Routes>
-          <Route path="/" element={<Display />} />
-          <Route path="/album/:id" element={<Display isAlbum />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/playlists" element={<Playlists />} />{" "}
-          <Route path="/playlist/:id" element={<Playlist />} />{" "}
-        </Routes>
-        <InfoSidebar />
-        <VideoPlayer />
+        <SearchProvider>
+          <Sidebar />
+          <FavoritesProvider>
+            <Display />
+          </FavoritesProvider>
+          <InfoSidebar />
+          <VideoPlayer />
+        </SearchProvider>
       </div>
       <Player />
       <audio ref={audioRef} src={track.file} preload="auto"></audio>

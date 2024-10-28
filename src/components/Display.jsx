@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import DisplayHome from "./DisplayHome";
 import DisplayAlbum from "./DisplayAlbum";
 import { albumsData } from "../assets/assets";
+import FavoriteSongs from "./FavoriteSongs";
 
 const Display = () => {
   const displayRef = useRef();
@@ -20,7 +21,11 @@ const Display = () => {
 
   return (
     <div ref={displayRef} className="w-[100%] m-2 px-6 pt-4 rounded bg-[#121212] text-white overflow-auto lg:w-[75%] lg:ml-0">
-      {isAlbum ? <DisplayAlbum albumId={id} /> : <DisplayHome />}
+      <Routes>
+        <Route path="/" element={<DisplayHome />} />
+        <Route path="/album/:id" element={<DisplayAlbum />} />
+        <Route path="/favorites" element={<FavoriteSongs />} />
+      </Routes>
     </div>
   );
 };
