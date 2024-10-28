@@ -33,6 +33,8 @@ const DisplayHome = () => {
                 desc={items.desc}
                 id={items.id}
                 image={items.image}
+                album={items.album}
+                duration={items.duration}
               />
             ))
           }
