@@ -23,7 +23,7 @@ const Sidebar = () => {
   const genres = {
     Pop: songsData.filter((song) => song.genre === "Pop").slice(0, 3),
     "Hip-Hop": songsData.filter((song) => song.genre === "Hip-Hop").slice(0, 3),
-    Rock: songsData.filter((song) => song.genre === "Rock").slice(0, 3),
+    Trap: songsData.filter((song) => song.genre === "Trap").slice(0, 3),
   };
 
   return (

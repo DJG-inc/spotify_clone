@@ -33,6 +33,9 @@ import nostalgia from './nostalgia_album.jpeg'
 import scorpion from './scorpion_album.jpeg'
 import lonely from './lonely_album.jpeg'
 import after from './after_album.jpeg'
+import trap_album from './trap_album.jpeg'
+import bachata_album from './bachata_album.jpg'
+import salsa_album from './salsa_album.jpeg'
 
 import shape from './shape_of_you_song.jpeg'
 import castle from './castle_song.jpeg'
@@ -124,6 +127,33 @@ export const albumsData = [
         desc: "An album by The Weeknd with dark and moody tracks.",
         bgColor: "#9b2c2c"
     },
+    {
+        id: 5,
+        name: "Trap Classics",
+        artist: "Various Artists",
+        genre: "Trap",
+        image: trap_album,
+        desc: "A compilation of the top trap hits from various artists.",
+        bgColor: "#4a5568"
+    },
+    {
+        id: 6,
+        name: "This is Romeo Santos",
+        artist: "Romeo Santos",
+        genre: "Bachata",
+        image: bachata_album,
+        desc: "A compilation of the top bachata hits by Romeo Santos.",
+        bgColor: "#6b46c1"
+    },
+    {
+        id: 7,
+        name: "Top Salsa Hits",
+        artist: "Various Artists",
+        genre: "Salsa",
+        image: salsa_album,
+        desc: "A compilation of the top salsa hits from various artists.",
+        bgColor: "#2c7a7b"
+    }
 ];
 
 
