@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { assets } from "../assets/assets";
 import { useFavorites } from "../context/FavoriteContext"; 
 import { PlayerContext } from "../context/PlayerContext";
+import like_album from "../assets/like_album.jpeg";
 
 const FavoriteSongs = () => {
   const { favorites, removeFavorite, isFavorite } = useFavorites(); 
@@ -10,7 +11,7 @@ const FavoriteSongs = () => {
 
   const favoriteAlbum = {
     name: "Your Favorites",
-    image: "favorite_album_image.jpg", // Cambiar la imagen por una real
+    image: like_album,
     desc: "A collection of your favorite songs.",
   };
 
