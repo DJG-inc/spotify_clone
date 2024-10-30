@@ -475,7 +475,7 @@ export const songsData = [
     {
         id: 20,
         name: "Soy Peor",
-        album: "Trap",
+        album: "Trap Classics",
         artist: "Bad Bunny",
         genre: "Trap",
         image: trap1,
@@ -487,7 +487,7 @@ export const songsData = [
     {
         id: 21,
         name: "Diles",
-        album: "Trap",
+        album: "Trap Classics",
         artist: "Ozuna ft. Bad Bunny, Arcangel, Farruko & Nengo Flow",
         genre: "Trap",
         image: trap2,
@@ -499,7 +499,7 @@ export const songsData = [
     {
         id: 22,
         name: "Esclava Remix",
-        album: "Trap",
+        album: "Trap Classics",
         artist: "Bryant Myers ft. Anuel AA, Almighty, Anonimus & Anuel AA",
         genre: "Trap",
         image: trap3,
@@ -511,7 +511,7 @@ export const songsData = [
     {
         id: 23,
         name: "0 Sentimientos Remix",
-        album: "Trap",
+        album: "Trap Classics",
         artist: "Jon Z ft. Baby Rasta, Noriel, Lyan, Darkiel, Messiah",
         genre: "Trap",
         image: trap4,
@@ -523,7 +523,7 @@ export const songsData = [
     {
         id: 24,
         name: "La Ocasion",
-        album: "Trap",
+        album: "Trap Classics",
         artist: "De La Ghetto ft. Arcangel, Ozuna & Anuel AA",
         genre: "Trap",
         image: trap5,
@@ -535,7 +535,7 @@ export const songsData = [
     {
         id: 25,
         name: "Cuatro Babys",
-        album: "Trap",
+        album: "Trap Classics",
         artist: "Maluma ft. Noriel, Bryant Myers, Juhn",
         genre: "Trap",
         image: trap6,
@@ -547,7 +547,7 @@ export const songsData = [
     {
         id: 26,
         name: "Un Polvo",
-        album: "Trap",
+        album: "Trap Classics",
         artist: "Maluma ft. Bad Bunny, Arcangel, De La Ghetto & Ñengo Flow",
         genre: "Trap",
         image: trap7,
@@ -559,7 +559,7 @@ export const songsData = [
     {
         id: 27,
         name: "Me Ama Me Odia",
-        album: "Trap",
+        album: "Trap Classics",
         artist: "Ozuna ft. Arcangel, Cosculluela, Brytiago",
         genre: "Trap",
         image: trap8,
@@ -571,7 +571,7 @@ export const songsData = [
     {
         id: 28,
         name: "Soldado y Profeta Remix",
-        album: "Trap",
+        album: "Trap Classics",
         artist: "Anuel AA ft. Ozuna, Almighty, Kendo Kaponi & Ñengo Flow",
         genre: "Trap",
         image: trap9,
@@ -583,7 +583,7 @@ export const songsData = [
     {
         id: 29,
         name: "Amigos y Enemigos Remix",
-        album: "Trap",
+        album: "Trap Classics",
         artist: "Noriel ft. Bad Bunny, Almighty",
         genre: "Trap",
         image: trap10,
