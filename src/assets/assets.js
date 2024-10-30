@@ -24,9 +24,9 @@ import arrow_left from './left_arrow.png'
 import spotify_logo from './spotify_logo.png'
 import clock_icon from './clock_icon.png'
 
-import song1 from  './song1.mp3'
-import song2 from  './song2.mp3'
-import song3 from  './song3.mp3'
+import song1 from  './songs/song1.mp3'
+import song2 from  './songs/song2.mp3'
+import song3 from  './songs/song3.mp3'
 
 import divide from './divide_album.jpeg'
 import nostalgia from './nostalgia_album.jpeg'
