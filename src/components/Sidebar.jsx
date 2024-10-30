@@ -21,8 +21,8 @@ const Sidebar = () => {
 
   // Agrupar canciones por género
   const genres = {
-    Pop: songsData.filter((song) => song.genre === "Pop").slice(0, 3),
-    "Hip-Hop": songsData.filter((song) => song.genre === "Hip-Hop").slice(0, 3),
+    Bachata: songsData.filter((song) => song.genre === "Bachata").slice(0, 3),
+    Salsa: songsData.filter((song) => song.genre === "Salsa").slice(0, 3),
     Trap: songsData.filter((song) => song.genre === "Trap").slice(0, 3),
   };
 
